@@ -1,11 +1,14 @@
 <?php
 
-  session_start(); /* Starts the session */
 
-  if($_SESSION['Active'] == false){ /* Redirects user to Login.php if not logged in */
-    header("location:login.php");
-	  exit;
-  }
+ // Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
 ?>
 
 <!-- Show password protected content down here -->
