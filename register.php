@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_email = trim($_POST["email"]);
             
             // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
+            if(mysqli_stmt_execute("SELECT C.email FROM Customers C WHERE C.email = 'test@gmail.com'")){
                 /* store result */
                 mysqli_stmt_store_result($stmt);
                 
