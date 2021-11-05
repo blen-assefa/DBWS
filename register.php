@@ -46,9 +46,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter a username.";     
     } else{
-        $stat = empty(trim($_POST["username"]));
-        $username_err = "Please enter a username." . " " . $stat;
-        $username = trim($_POST["username"]);
+        
+        
+        //$username = trim($_POST["username"]);
+        $username_err = "Please enter a username. " . $username;
     }
     
     // Validate password
