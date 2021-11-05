@@ -48,8 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         
         
-        //$username = trim($_POST["username"]);
-        $username_err = "Please enter a username. " . $username;
+        $username = "Error somewhere" . " " . $_POST["username"] ;
     }
     
     // Validate password
