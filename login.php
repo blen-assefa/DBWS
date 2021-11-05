@@ -70,12 +70,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             header("location: index.php");
                         } else{
                             // Password is not valid, display a generic error message
-                            $login_err = $hashed_password;
+                            $login_err = "Invalid Password or Email";
                         }
                     }
                 } else{
                     // email doesn't exist, display a generic error message
-                    $login_err = "Email doesn't exit in the database";
+                    $login_err = "Email doesn't exit in the database. Please create an account.";
                 }
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
