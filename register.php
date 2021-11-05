@@ -92,6 +92,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Redirect to login page
                 header("location: login.php");
             } else{
+               echo $param_username;
+             echo "   ";
+             echo $param_email;
+             echo "   ";
+             echo $param_password;
+             echo "   ";
                 echo "Oops! Something went wrong. Please try again later. Insert query error";
             }
 
