@@ -5,6 +5,32 @@ require_once "config.php";
 // Define variables and initialize with empty values
 $email = $username = $password = $confirm_password = "";
 $email_err = $username_err = $password_err = $confirm_password_err = "";
+
+function checkKeys($randStr) {
+  $keySearch = "SELECT * FROM keystring";
+  $result = mysqli_query($link, $keySearch);
+  while ($row = mysqli_fetch_assoc($result)) {
+    if ($row['keystringKey'] == $randStr) {
+      $keyExists = true;
+      break;
+    } else {
+      $keyExists = false;
+    }
+  }
+  return $keyExists;
+}
+
+function generateKey() {
+  $keyLength = 5;
+  $str = "0123456789";
+  $randStr = substr(str_shuffle($str), 0, $keyLength);
+  $checkKey = checkKeys($randStr);
+  while ($checkKey == true) {
+    $randStr = substr(str_shuffle($str), 0, $keyLength);
+    $checkKey = checkKeys($randStr);
+  }
+  return $randStr;
+}
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -48,9 +74,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             mysqli_stmt_close($stmt);
         }
     }
-
- 
-   
     
     
     // Validate password
@@ -76,11 +99,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($email_err) && empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO Customers(name, email, password) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO Customers(customer_id, name, email, password) VALUES (?, ?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_email, $param_password);
+            $param_customer_id = generateKey();
+            mysqli_stmt_bind_param($stmt, "dsss", $param_customer_id, $param_username, $param_email, $param_password);
             
             // Set parameters
             $param_username = $username;
