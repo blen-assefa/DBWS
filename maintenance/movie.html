@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <link href="../style.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>CineManiacs</title>
+</head>
+
+<body>
+
+<div class="topnav">
+  <a href="../maintenance.html">Back to the maintenance page</a>
+</div>
+
+<br>
+
+<h2>Insert a movie in the database</h2>
+
+<form action="movie_insert.php" method="post">
+  <input type="text" id="name" placeholder="Movie name" name="name"><br>
+  <input type="number" id="duration" placeholder="Duration (in min)" name="duration" min="1" value="90"><br>
+  <textarea id="description" name="description" rows="10" cols="30" placeholder="Description here"></textarea><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
