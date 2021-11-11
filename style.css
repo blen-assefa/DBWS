@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-  color: #004488;
+  color: #003468;
   font-size: 225%;
 }
 
@@ -44,7 +44,7 @@ input[type=password] {
 }
 
 input[type=number] {
-  width: 48px;
+  width: 72px;
   padding: 4px 2px 4px 2px;
   margin: 2px 20px 2px 20px;
   background-color: #f0f6fc;
@@ -75,6 +75,7 @@ input[type=radio] {
 }
 
 select {
+  padding: 4px 2px 4px 2px;
   margin: 2px 20px 2px 20px;
 }
 
