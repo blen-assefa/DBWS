@@ -121,6 +121,9 @@ li {
 }
 
 .footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color: #90a0c0;
   font-size: 75%;
   padding: 10px;

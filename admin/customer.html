@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+  <link href="../style.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>CineManiacs</title>
+</head>
+
+<body>
+
+<div class="topnav">
+  <a href="../maintenance.html">Back to the maintenance page</a>
+</div>
+
+<br>
+
+<h2>Insert a customer in the database</h2>
+
+<form action="customer_insert.php" method="post">
+  <input type="radio" id="regular" name="customer_type" value="Regular">
+  <label for="regular">Regular     </label>
+  <input type="radio" id="member" name="customer_type" value="Member">
+  <label for="member">Member</label><br>
+  <input type="text" id="name" name="name" placeholder="Name here"><br>
+  <input type="text" id="email" name="email" placeholder="Email here"><br>
+  <input type="text" id="password" name="password" placeholder="Password here"><br>
+  <input type="submit" value="Submit">
+</form>
+
+<?php
+
+echo "<p>SQL Commands:</p>";
+
+$db = mysqli_connect('localhost', 'group14', 'Y2YxSV', 'group14')
+or die('Error connecting to MySQL server.');
+
+require_once "../randkey_foos.php";
+
+$name = $_POST["name"];
+$email = $_POST["email"];
+$customer_id = generateKey($db);
+$password = $_POST["password"];
+
+$sql = "INSERT INTO Customers VALUES ('$customer_id', '$name', '$email', '$password')";
+echo "<p>$sql</p>";
+mysqli_query($db, $sql) or die('Error querying database.');
+echo "<h3>New record created successfully.</h3>";
+
+if ($_POST["customer_type"] == "Regular") {
+  $sql2 = "INSERT INTO Regulars VALUES ('$customer_id')";
+  echo "<p>$sql2</p>";
+  mysqli_query($db, $sql2) or die('Error querying database.');
+  echo "<h3>New record created successfully.</h3>";
+}
+if ($_POST["customer_type"] == "Member") {
+  $membership_id = generateKey($db);
+  $sql2 = "INSERT INTO Members VALUES ('$customer_id', '$membership_id')";
+  echo "<p>$sql2</p>";
+  mysqli_query($db, $sql2) or die('Error querying database.');
+  echo "<h3>New record created successfully.</h3>";
+}
+
+mysqli_close($db);
+?>
+</body>

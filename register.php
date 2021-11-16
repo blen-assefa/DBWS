@@ -1,36 +1,11 @@
 <?php
 // Include config file
 require_once "config.php";
+require_once "randkey_foos.php";
  
 // Define variables and initialize with empty values
 $email = $username = $password = $confirm_password = "";
 $email_err = $username_err = $password_err = $confirm_password_err = "";
-
-function checkKeys($randStr) {
-  $keySearch = "SELECT * FROM keystring";
-  $result = mysqli_query($link, $keySearch);
-  while ($row = mysqli_fetch_assoc($result)) {
-    if ($row['keystringKey'] == $randStr) {
-      $keyExists = true;
-      break;
-    } else {
-      $keyExists = false;
-    }
-  }
-  return $keyExists;
-}
-
-function generateKey() {
-  $keyLength = 5;
-  $str = "0123456789";
-  $randStr = substr(str_shuffle($str), 0, $keyLength);
-  $checkKey = checkKeys($randStr);
-  while ($checkKey == true) {
-    $randStr = substr(str_shuffle($str), 0, $keyLength);
-    $checkKey = checkKeys($randStr);
-  }
-  return $randStr;
-}
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
