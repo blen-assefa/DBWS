@@ -68,6 +68,25 @@ input[type=submit]:hover {
   text-decoration: underline;
 }
 
+button {
+  margin: 16px 36px 16px 36px;
+  color: #f0f6fc;
+  font-size: 100%;
+  padding: 4px 8px 4px 8px;
+  background-color: #333366;
+  border-color: #f0f6fc;
+  border-style: solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444488;
+  color: #f4f4ff;
+  text-decoration: underline;
+}
+
+
 input[type=radio] {
   margin: 6px 8px 6px 24px;
   background-color: #f0f6fc;
@@ -77,10 +96,6 @@ input[type=radio] {
 select {
   padding: 4px 2px 4px 2px;
   margin: 2px 20px 2px 20px;
-}
-
-button {
-  margin: 16px 36px 16px 36px;
 }
 
 
