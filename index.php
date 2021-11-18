@@ -44,18 +44,18 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           <a class="nav-link" href="#">Book</a>
         </li>
         <li class="nav-item px-2">
-          <a class="nav-link" href="/about.php">About us</a>
+          <a class="nav-link" href="about.php">About us</a>
         </li>
         <li class="nav-item px-2">
-          <a class="nav-link" href="/contact-us.php">Contact Us</a>
+          <a class="nav-link" href="contact-us.php">Contact Us</a>
         </li>
         <?php
         // Check if the user is logged in, if not then redirect him to login page
         if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-          echo "<li class=\"nav-item px-2\"><a class=\"nav-link\" href=\"/login.php\">Log in</a></li>";
-          echo "<li class=\"nav-item px-2 \"><a class=\"nav-link\" href=\"/register.php\">Register</a></li>";
+          echo "<li class=\"nav-item px-2\"><a class=\"nav-link\" href=\"login.php\">Log in</a></li>";
+          echo "<li class=\"nav-item px-2 \"><a class=\"nav-link\" href=\"register.php\">Register</a></li>";
         } else {
-          echo "<li class=\"nav-item px-2\"><a class=\"nav-link\" href=\"/logout.php\">Log out</a></li>";
+          echo "<li class=\"nav-item px-2\"><a class=\"nav-link\" href=\"logout.php\">Log out</a></li>";
         }
         ?>
       </ul>
