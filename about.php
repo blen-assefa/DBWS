@@ -26,7 +26,7 @@
           <a class="nav-link" href="#">Book</a>
         </li>
         <li class="nav-item active px-2">
-          <a class="nav-link" href="about.php">About us</a>
+          <a class="nav-link" href="#">About us</a>
         </li>
         <li class="nav-item px-2">
           <a class="nav-link" href="contact-us.php">Contact Us</a>
