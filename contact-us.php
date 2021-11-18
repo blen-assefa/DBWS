@@ -21,13 +21,13 @@
         <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item  px-2">
-                    <a class="nav-link" href="/index.php">Home</a>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item px-2">
                     <a class="nav-link" href="#">Book</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="/about.php">About us</a>
+                    <a class="nav-link" href="about.php">About us</a>
                 </li>
                 <li class="nav-item active px-2">
                     <a class="nav-link" href="#">Contact Us</a>
@@ -35,10 +35,10 @@
                 <?php
                 // Check if the user is logged in, if not then redirect him to login page
                 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-                    echo "<li class=\"nav-item px-2\"><a class=\"nav-link\" href=\"/login.php\">Log in</a></li>";
-                    echo "<li class=\"nav-item px-2 \"><a class=\"nav-link\" href=\"/register.php\">Register</a></li>";
+                    echo "<li class=\"nav-item px-2\"><a class=\"nav-link\" href=\"login.php\">Log in</a></li>";
+                    echo "<li class=\"nav-item px-2 \"><a class=\"nav-link\" href=\"register.php\">Register</a></li>";
                 } else {
-                    echo "<li class=\"nav-item px-2\"><a class=\"nav-link\" href=\"/logout.php\">Log out</a></li>";
+                    echo "<li class=\"nav-item px-2\"><a class=\"nav-link\" href=\"logout.php\">Log out</a></li>";
                 }
                 ?>
             </ul>
