@@ -29,38 +29,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand px-5" href="#">CineManics</a>
-
-    <div class="collapse navbar-collapse" id="navbarToggler">
-      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        <li class="nav-item active px-2">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item px-2">
-          <a class="nav-link" href="#">Book</a>
-        </li>
-        <li class="nav-item px-2">
-          <a class="nav-link" href="about.php">About us</a>
-        </li>
-        <li class="nav-item px-2">
-          <a class="nav-link" href="contact-us.php">Contact Us</a>
-        </li>
-        <?php
-        // Check if the user is logged in, if not then redirect him to login page
-        if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-          echo "<li class=\"nav-item px-2\"><a class=\"nav-link\" href=\"login.php\">Log in</a></li>";
-          echo "<li class=\"nav-item px-2 \"><a class=\"nav-link\" href=\"register.php\">Register</a></li>";
-        } else {
-          echo "<li class=\"nav-item px-2\"><a class=\"nav-link\" href=\"logout.php\">Log out</a></li>";
-        }
-        ?>
-      </ul>
-    </div>
-  </nav>
+<?php
+    $current_page = "index";
+    include "header.php";
+    ?>
 
     <header class="jumbotron">
       <div class="container">
@@ -102,90 +74,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer bg-dark text-white font-small pt-4 px-5">
+    <?php
+    include "footer.php";
+    ?>
 
-      <!-- Footer Links -->
-      <div class="container-fluid text-center text-md-left">
-
-        <!-- Grid row -->
-        <div class="row">
-
-          <!-- Grid column -->
-          <div class="col-md-6 mt-md-0 mt-3">
-
-            <!-- Content -->
-            <h5 class="text-uppercase">Footer Content</h5>
-            <p>Here you can use rows and columns to organize your footer content.</p>
-
-          </div>
-          <!-- Grid column -->
-
-          <hr class="clearfix w-100 d-md-none pb-3">
-
-          <!-- Grid column -->
-          <div class="col-md-3 mb-md-0 mb-3">
-
-            <!-- Links -->
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-              <li>
-                <a href="#!">Link 3</a>
-              </li>
-              <li>
-                <a href="#!">Link 4</a>
-              </li>
-            </ul>
-
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-3 mb-md-0 mb-3">
-
-            <!-- Links -->
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-              <li>
-                <a href="#!">Link 3</a>
-              </li>
-              <li>
-                <a href="#!">Link 4</a>
-              </li>
-            </ul>
-
-          </div>
-          <!-- Grid column -->
-
-        </div>
-        <!-- Grid row -->
-
-      </div>
-      <!-- Footer Links -->
-
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">© 2021 Copyright:
-        Group 14
-      </div>
-      <!-- Copyright -->
-
-    </footer>
-    <!-- Footer -->
-
+   
 
 
   <!-- Optional JavaScript -->
