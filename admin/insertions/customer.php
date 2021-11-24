@@ -4,15 +4,13 @@
 
 echo "<p>SQL Commands:</p>";
 
-$db = mysqli_connect('localhost', 'group14', 'Y2YxSV', 'group14')
-or die('Error connecting to MySQL server.');
+require_once "../../config.php";
+require_once "../../randkey_foos.php";
 
-require_once "../randkey_foos.php";
-
-$name = $_POST["name"];
-$email = $_POST["email"];
+$name = mysqli_real_escape_string($_POST["name"]);
+$email = mysqli_real_escape_string($_POST["email"]);
+$password = mysqli_real_escape_string($_POST["password"]);
 $customer_id = generateKey($db);
-$password = $_POST["password"];
 
 $sql = "INSERT INTO Customers VALUES ('$customer_id', '$name', '$email', '$password')";
 echo "<p>$sql</p>";

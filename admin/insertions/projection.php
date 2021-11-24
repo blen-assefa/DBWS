@@ -3,16 +3,14 @@
 <p>SQL Command:
 <?php
 
-$db = mysqli_connect('localhost', 'group14', 'Y2YxSV', 'group14')
-or die('Error connecting to MySQL server.');
-
-require_once "../randkey_foos.php";
+require_once "../../config.php";
+require_once "../../randkey_foos.php";
 
 $projection_id = generateKey($db);
 $movie_id = $_POST["movie"];
 $room_id = $_POST["room"];
-$date = $_POST["date"];
-$time = $_POST["time"];
+$date = mysqli_real_escape_string($_POST["date"]);
+$time = mysqli_real_escape_string($_POST["time"]);
 
 
 $sql = "INSERT INTO Projections VALUES ('$projection_id', '$movie_id',

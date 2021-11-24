@@ -3,10 +3,8 @@
 <p>SQL Command:
 <?php
 
-$db = mysqli_connect('localhost', 'group14', 'Y2YxSV', 'group14')
-or die('Error connecting to MySQL server.');
-
-require_once "../randkey_foos.php";
+require_once "../../config.php";
+require_once "../../randkey_foos.php";
 
 $r_num = $_POST["number"];
 $room_id = generateKey($db);

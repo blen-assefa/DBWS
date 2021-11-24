@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Prepare a select statement
         $sql = "SELECT C.email FROM Customers C WHERE C.email = ?";
 
-        if ($stmt = mysqli_prepare($link, $sql)) {
+        if ($stmt = mysqli_prepare($db, $sql)) {
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_email);
 
@@ -76,9 +76,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Prepare an insert statement
         $sql = "INSERT INTO Customers(customer_id, name, email, password) VALUES (?, ?, ?, ?)";
 
-        if ($stmt = mysqli_prepare($link, $sql)) {
+        if ($stmt = mysqli_prepare($db, $sql)) {
             // Bind variables to the prepared statement as parameters
-            $param_customer_id = generateKey($link);
+            $param_customer_id = generateKey($db);
             mysqli_stmt_bind_param($stmt, "dsss", $param_customer_id, $param_username, $param_email, $param_password);
 
             // Set parameters
@@ -115,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Close connection
-    mysqli_close($link);
+    mysqli_close($db);
 }
 ?>
 
