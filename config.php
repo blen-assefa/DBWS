@@ -1,5 +1,23 @@
+
 <?php
 
-$db = mysqli_connect('localhost', 'group14', 'Y2YxSV', 'group14') or die('Error connecting to MySQL server.');
+// Database credentials. Assuming you are running MySQL
+// server with default setting (user 'root' with no password) 
+
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'group14');
+define('DB_PASSWORD', 'Y2YxSV');
+define('DB_NAME', 'group14');
+ 
+// Attempt to connect to MySQL database 
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+} 
+
+$current_page = "index";
 
 ?>
+

@@ -112,41 +112,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand px-5" href="#">CineManics</a>
+    <?php
+    $current_page = "login";
+    include "header.php";
+    ?>
 
-        <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item  px-2">
-                    <a class="nav-link" href="index.php">Home</a>
-                </li>
-                <li class="nav-item px-2">
-                    <a class="nav-link" href="#">Book</a>
-                </li>
-                <li class="nav-item px-2">
-                    <a class="nav-link" href="about.php">About us</a>
-                </li>
-                <li class="nav-item  px-2">
-                    <a class="nav-link" href="contact-us.php">Contact Us</a>
-                </li>
-                <?php
-                // Check if the user is logged in, if not then redirect him to login page
-                if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-                    echo "<li class=\"nav-item active px-2\"><a class=\"nav-link\" href=\"#\">Log in</a></li>";
-                    echo "<li class=\"nav-item px-2 \"><a class=\"nav-link\" href=\"register.php\">Register</a></li>";
-                } else {
-                    echo "<li class=\"nav-item px-2\"><a class=\"nav-link\" href=\"logout.php\">Log out</a></li>";
-                }
-                ?>
-            </ul>
-        </div>
-    </nav>
-<div class="container h-100 d-flex justify-content-center">
-    <div class="jumbotron my-auto" >
-        
+    <div class="container h-100 d-flex justify-content-center">
+        <div class="jumbotron my-auto">
+
             <div class="wrapper">
                 <h2>Login</h2>
                 <p>Please fill in your credentials to login.</p>
@@ -166,9 +139,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
                         <span class="invalid-feedback"><?php echo $password_err; ?></span>
                         <small id="loginHelp" class="form-text text-muted float-right"><a href="/forgot-password.php">Forgot password</a></small>
-                 
+
                     </div>
-                    
+
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Login">
                     </div>
@@ -176,12 +149,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </form>
             </div>
         </div>
+
     </div>
+    <?php
+    include "footer.php";
+    ?>
+
+
     <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
 
