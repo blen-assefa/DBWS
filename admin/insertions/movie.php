@@ -3,14 +3,12 @@
 <p>SQL Command:
 <?php
 
-$db = mysqli_connect('localhost', 'group14', 'Y2YxSV', 'group14')
-or die('Error connecting to MySQL server.');
+require_once "../../config.php";
+require_once "../../randkey_foos.php";
 
-require_once "../randkey_foos.php";
-
-$name = htmlspecialchars($_POST["name"], ENT_QUOTES);
+$name = mysqli_real_escape_string($_POST["name"]);
 $duration = $_POST["duration"];
-$desc = $_POST["description"];
+$desc = mysqli_real_escape_string($_POST["description"]);
 $movie_id = generateKey($db);
 
 $sql = "INSERT INTO Movies VALUES ('$movie_id', '$name', '$desc', '$duration')";

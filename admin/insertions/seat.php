@@ -3,15 +3,13 @@
 <p>SQL Command:
 <?php
 
-$db = mysqli_connect('localhost', 'group14', 'Y2YxSV', 'group14')
-or die('Error connecting to MySQL server.');
+require_once "../../config.php";
+require_once "../../randkey_foos.php";
 
-require_once "../randkey_foos.php";
-
-$seat_id = generateKey($db);
 $room_id = $_POST["room"];
 $s_num = $_POST["number"];
 $s_row = $_POST["row"];
+$seat_id = generateKey($db);
 
 
 $sql = "INSERT INTO Seats VALUES ('$seat_id', '$room_id', '$s_num', '$s_row')";

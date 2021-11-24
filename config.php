@@ -8,7 +8,7 @@ define('DB_USERNAME', 'group14');
 define('DB_PASSWORD', 'Y2YxSV');
 define('DB_NAME', 'group14');
  
-// Attempt to connect to MySQL database 
+// Attempt to connect to MySQL database
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
  
 // Check connection

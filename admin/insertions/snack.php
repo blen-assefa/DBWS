@@ -3,15 +3,13 @@
 <p>SQL Commands:</p>
 <?php
 
-$db = mysqli_connect('localhost', 'group14', 'Y2YxSV', 'group14')
-or die('Error connecting to MySQL server.');
+require_once "../../config.php";
+require_once "../../randkey_foos.php";
 
-require_once "../randkey_foos.php";
-
-$snack_id = generateKey($db);
-$name = htmlspecialchars($_POST["name"], ENT_QUOTES);
-$description = $_POST["description"];
+$name = mysqli_real_escape_string($_POST["name"]);
+$description = mysqli_real_escape_string($_POST["description"]);
 $cost = $_POST["cost"];
+$snack_id = generateKey($db);
 
 
 $sql = "INSERT INTO Snacks VALUES ('$snack_id', '$name', '$description', '$cost')";
