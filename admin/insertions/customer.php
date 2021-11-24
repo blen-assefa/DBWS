@@ -4,8 +4,8 @@
 
 echo "<p>SQL Commands:</p>";
 
-require_once "../../config.php";
-require_once "../../randkey_foos.php";
+require_once "../config.php";
+require_once "randkey_foos.php";
 
 $name = mysqli_real_escape_string($_POST["name"]);
 $email = mysqli_real_escape_string($_POST["email"]);

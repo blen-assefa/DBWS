@@ -3,8 +3,8 @@
 <p>SQL Command:
 <?php
 
-require_once "../../config.php";
-require_once "../../randkey_foos.php";
+require_once "../config.php";
+require_once "randkey_foos.php";
 
 $name = mysqli_real_escape_string($_POST["name"]);
 $duration = $_POST["duration"];
