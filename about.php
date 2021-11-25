@@ -36,11 +36,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   <header class="jumbotron">
     <div class="container">
       <div class="row row-header">
-        <div class="col-12 col-sm-6">
-          <h1>CineManics</h1>
-          <p>CineManics is a cinema booking website that will make reserving of cinema seats
-            with or without accommodations effortless, easy, and fast.</p>
-        </div>
+      <div class="col-12 col-sm align-self-center">
+                    <img src="img/logo.png" class="img-fluid">
+                </div>
+                <div class="col-12 col-sm-8">
+                    <h1>CineManics</h1>
+                    <p>CineManics is a cinema booking website that will make reserving of cinema seats
+                        with or without accommodations effortless, easy, and fast.</p>
+                </div>
 
       </div>
     </div>

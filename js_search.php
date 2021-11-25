@@ -3,25 +3,20 @@
 require_once "config.php";
 
 // Get search term 
-$searchTerm = $_GET['term']; 
 
-echo "<p> Term is -- `$searchTerm`</p>";
- 
-function get_movie($link , $term){ 
+$term = trim(strip_tags($_GET['term']));
 
- $query = "SELECT * FROM Movies M WHERE M.name LIKE '%".$term."%' ORDER BY name ASC";
- $result = mysqli_query($link, $query); 
- $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
- return $data; 
-}
- 
-if (isset($searchTerm)) {
- $getmovie = get_movie($link, $searchTerm);
- $movieList = array();
- foreach($getmovie as $movie){
- $movieList[] = $movie['name'];
- }
- echo json_encode($movieList);
-}
+$query = $link->query("SELECT * FROM Movies M WHERE M.name LIKE '%".$term."%' ORDER BY name ASC") or die(mysqli_connect_errno());
 
+$list = array();
+        $rows = $query->num_rows;
+
+        if($rows > 0){
+                while($fetch = $query->fetch_assoc()){
+                        $data['value'] = $fetch['name'];
+                        array_push($list, $data);
+                }
+        }
+
+        echo json_encode($list);
 ?>

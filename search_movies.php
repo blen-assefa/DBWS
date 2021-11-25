@@ -1,18 +1,3 @@
-<?php
-
-
-// Initialize the session
-$status = "Not Logged In";
-session_start();
-
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    $status = "Not Logged In";
-} else {
-    $status = "Logged In";
-}
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -47,7 +32,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             <div class="row align-items-center">
                 <div class="col-lg-6 mx-auto">
                     <div class="input-group">
-                    <input type="text" name="movies" id="autocomplete" placeholder="Type to search..." class="form-control">
+                        <input type="text" name="movies" id="autocomplete" placeholder="Type to search..." class="form-control">
                         <span class="input-group-btn mx-3">
                             <button class="btn btn-secondary" type="button">Search</button>
                         </span>
@@ -80,8 +65,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         </div>
     </div>
 
-    
-
     <!-- Footer -->
     <?php
     include "footer.php";
@@ -91,7 +74,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
     <script type="text/javascript">
         $("#autocomplete").autocomplete({
-            source: 'js_search.php'
+            source: "js_search.php",
+            minLength: 0, //search after two characters
+            select: function(event, ui) {
+                window.location = 'book.php';
+            }
         });
     </script>
     <!-- Optional JavaScript -->
@@ -99,7 +86,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    
+
 </body>
 
 </html>

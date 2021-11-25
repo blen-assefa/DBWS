@@ -35,13 +35,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
-                <div class="col-12 col-sm-6">
+                
+                <div class="col-12 col-sm align-self-center">
+                    <img src="img/logo.png" class="img-fluid">
+                </div>
+                <div class="col-12 col-sm-8">
                     <h1>CineManics</h1>
                     <p>CineManics is a cinema booking website that will make reserving of cinema seats
                         with or without accommodations effortless, easy, and fast.</p>
-                </div>
-                <div class="col-12 col-sm align-self-center">
-                    <img src="img/logo.png" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -75,6 +76,19 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                         <label for="lastname" class="col-md-2 col-form-label">Last Name</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="telnum" class="col-12 col-md-2 col-form-label">Contact Tel.</label>
+                        <div class="col-5 col-sm-4 col-md-3">
+                            <div class="input-group">
+                                <div class="input-group-addon"></div>
+                                    <input type="tel" class="form-control" id="areacode" name="areacode" placeholder="Area code">
+                                <div class="input-group-addon"></div>
+                            </div>
+                        </div>
+                        <div class="col-7 col-sm-6 col-md-7">
+                            <input type="tel" class="form-control" id="telnum" name="telnum" placeholder="Tel. number">
                         </div>
                     </div>
                     <div class="form-group row">
