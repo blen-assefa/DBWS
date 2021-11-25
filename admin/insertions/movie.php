@@ -6,9 +6,9 @@
 require_once "../config.php";
 require_once "randkey_foos.php";
 
-$name = mysqli_real_escape_string($_POST["name"]);
+$name = mysqli_real_escape_string($db, $_POST["name"]);
 $duration = $_POST["duration"];
-$desc = mysqli_real_escape_string($_POST["description"]);
+$desc = mysqli_real_escape_string($db, $_POST["description"]);
 $movie_id = generateKey($db);
 
 if (!isset($_POST['genre1'])) {

@@ -9,8 +9,8 @@ require_once "randkey_foos.php";
 $projection_id = generateKey($db);
 $movie_id = $_POST["movie"];
 $room_id = $_POST["room"];
-$date = mysqli_real_escape_string($_POST["date"]);
-$time = mysqli_real_escape_string($_POST["time"]);
+$date = mysqli_real_escape_string($db, $_POST["date"]);
+$time = mysqli_real_escape_string($db, $_POST["time"]);
 
 
 $sql = "INSERT INTO Projections VALUES ('$projection_id', '$movie_id',
