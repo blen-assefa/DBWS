@@ -19,7 +19,7 @@ if (!isset($_POST['genre1'])) {
 $genre = $_POST["genre1"] . "/" . $_POST["genre2"];
 }
 
-$sql = "INSERT INTO Movies VALUES ('$movie_id', '$genre', '$name', '$desc', '$duration')";
+$sql = "INSERT INTO Movies VALUES ('$movie_id', '$name', '$genre', '$desc', '$duration')";
 echo "$sql</p>";
 
 mysqli_query($db, $sql) or die('Error querying database.');
