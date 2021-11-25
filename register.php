@@ -100,12 +100,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Redirect user to welcome page
                 header("location: index.php");
             } else {
-                echo $param_username;
-                echo "   ";
-                echo $param_email;
-                echo "   ";
-                echo $param_customer_id;
-                echo "   ";
                 echo "Oops! Something went wrong. Please try again later. Insert query error";
             }
 
