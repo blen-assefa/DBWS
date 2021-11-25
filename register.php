@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "   ";
                 echo $param_email;
                 echo "   ";
-                echo $param_password;
+                echo $param_customer_id;
                 echo "   ";
                 echo "Oops! Something went wrong. Please try again later. Insert query error";
             }
