@@ -1,4 +1,3 @@
-
 <?php
 
 // Database credentials. Assuming you are running MySQL
@@ -23,4 +22,3 @@ if ($link === false) {
 $current_page = "index";
 
 ?>
-

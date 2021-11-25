@@ -3,15 +3,23 @@
 <p>SQL Command:
 <?php
 
-require_once "../../config.php";
-require_once "../../randkey_foos.php";
+require_once "../config.php";
+require_once "randkey_foos.php";
 
-$name = mysqli_real_escape_string($_POST["name"]);
+$name = mysqli_real_escape_string($db, $_POST["name"]);
 $duration = $_POST["duration"];
-$desc = mysqli_real_escape_string($_POST["description"]);
+$desc = mysqli_real_escape_string($db, $_POST["description"]);
 $movie_id = generateKey($db);
 
-$sql = "INSERT INTO Movies VALUES ('$movie_id', '$name', '$desc', '$duration')";
+if (!isset($_POST['genre1'])) {
+  $genre = $_POST["genre2"];
+} elseif (!isset($_POST['genre2'])) {
+  $genre = $_POST["genre1"];
+} else {
+$genre = $_POST["genre1"] . "/" . $_POST["genre2"];
+}
+
+$sql = "INSERT INTO Movies VALUES ('$movie_id', '$name', '$genre', '$desc', '$duration')";
 echo "$sql</p>";
 
 mysqli_query($db, $sql) or die('Error querying database.');

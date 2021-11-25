@@ -4,12 +4,12 @@
 
 echo "<p>SQL Commands:</p>";
 
-require_once "../../config.php";
-require_once "../../randkey_foos.php";
+require_once "../config.php";
+require_once "randkey_foos.php";
 
-$name = mysqli_real_escape_string($_POST["name"]);
-$email = mysqli_real_escape_string($_POST["email"]);
-$password = mysqli_real_escape_string($_POST["password"]);
+$name = mysqli_real_escape_string($db, $_POST["name"]);
+$email = mysqli_real_escape_string($db, $_POST["email"]);
+$password = mysqli_real_escape_string($db, $_POST["password"]);
 $customer_id = generateKey($db);
 
 $sql = "INSERT INTO Customers VALUES ('$customer_id', '$name', '$email', '$password')";

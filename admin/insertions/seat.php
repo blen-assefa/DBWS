@@ -3,8 +3,8 @@
 <p>SQL Command:
 <?php
 
-require_once "../../config.php";
-require_once "../../randkey_foos.php";
+require_once "../config.php";
+require_once "randkey_foos.php";
 
 $room_id = $_POST["room"];
 $s_num = $_POST["number"];

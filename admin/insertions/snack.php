@@ -3,11 +3,11 @@
 <p>SQL Commands:</p>
 <?php
 
-require_once "../../config.php";
-require_once "../../randkey_foos.php";
+require_once "../config.php";
+require_once "randkey_foos.php";
 
-$name = mysqli_real_escape_string($_POST["name"]);
-$description = mysqli_real_escape_string($_POST["description"]);
+$name = mysqli_real_escape_string($db, $_POST["name"]);
+$description = mysqli_real_escape_string($db, $_POST["description"]);
 $cost = $_POST["cost"];
 $snack_id = generateKey($db);
 
