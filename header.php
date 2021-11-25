@@ -12,7 +12,7 @@
                 <a class="nav-link <?php echo ($current_page === 'index') ? 'active' : ''; ?>" href="index.php">Home</a>
             </li>
             <li class="nav-item px-2">
-                <a class="nav-link <?php echo ($current_page === 'book') ? 'active' : ''; ?> " href="book.php">Book</a>
+                <a class="nav-link <?php echo ($current_page === 'search_movies') ? 'active' : ''; ?> " href="search_movies.php">Book</a>
             </li>
             <li class="nav-item px-2">
                 <a class="nav-link <?php echo ($current_page === 'about') ? 'active' : ''; ?> " href="about.php">About us</a>
@@ -30,5 +30,6 @@
             }
             ?>
         </ul>
+        
     </div>
 </nav>
