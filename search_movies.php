@@ -1,3 +1,16 @@
+<?php
+
+// Initialize the session
+$status = "Not Logged In";
+session_start();
+
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+  $status = "Not Logged In";
+} else {
+  $status = "Logged In";
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
