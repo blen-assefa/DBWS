@@ -31,22 +31,14 @@
 <form action="insertions/movie.php" method="post">
   <fieldset>
     <legend>Insert movie</legend>
-    <input type="radio" id="action1" name="genre1" value="Action">
-    <label for="drink">Action</label>
-    <input type="radio" id="action2" name="genre2" value="Action">
-    <label for="food">Action</label><br>
-    <input type="radio" id="drama1" name="genre1" value="Drama">
-    <label for="drink">Drama</label>
-    <input type="radio" id="drama2" name="genre2" value="Drama">
-    <label for="food">Drama</label><br>
-    <input type="radio" id="comedy1" name="genre1" value="Comedy">
-    <label for="drink">Comedy</label>
-    <input type="radio" id="comedy2" name="genre2" value="Comedy">
-    <label for="food">Comedy</label><br>
-    <input type="radio" id="horror1" name="genre1" value="Horror">
-    <label for="drink">Horror</label>
-    <input type="radio" id="horror2" name="genre2" value="Horror">
-    <label for="food">Horror</label><br>
+    <input type="checkbox" id="action" name="genre1" value="Action">
+    <label for="action">Action</label>
+    <input type="checkbox" id="drama" name="genre2" value="Drama">
+    <label for="drama">Drama</label>
+    <input type="checkbox" id="comedy" name="genre3" value="Comedy">
+    <label for="comedy">Comedy</label>
+    <input type="checkbox" id="horror" name="genre4" value="Horror">
+    <label for="horror">Horror</label><br>
     <input type="text" id="name" placeholder="Movie name" name="name"><br>
     <input type="number" id="duration" placeholder="Duration (in min)" name="duration" min="1" value="90"><br>
     <textarea id="description" name="description" rows="10" cols="30" placeholder="Description here"></textarea><br>
