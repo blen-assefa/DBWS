@@ -94,12 +94,13 @@
   <fieldset>
     <legend>Insert seat</legend>
     <select name="room">
-    <option value="0">Room</option>
+    <option value="-1">Choose Room</option>
   <?php
-    $db = mysqli_connect('localhost', 'group14', 'Y2YxSV', 'group14') or die('Error connecting to MySQL server.');
-    $sql = mysqli_query($db, "SELECT number FROM Rooms");
-    while ($row = mysql_fetch_array($sql)) {
-      echo "option value=\"room1\">" . $row['number'] . "</option>";
+    require_once "config.php";
+    $sql = "SELECT * FROM Rooms";
+    $result = mysqli_query($db, $sql);
+    while ($row = mysqli_fetch_array($result)) {
+      echo "option value='" . $row['room_id'] . "'>" . $row['r_num'] . "</option>";
     }
   ?>
     </select><br>
