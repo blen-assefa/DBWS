@@ -4,7 +4,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand px-5" href="#">CineManics</a>
+    <a class="navbar-brand px-5" href="#">CineManiacs</a>
 
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">

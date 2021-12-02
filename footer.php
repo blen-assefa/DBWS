@@ -11,7 +11,7 @@
     <div class="col-md-6 mt-md-0 mt-3">
 
       <!-- Content -->
-      <h5 class="text-uppercase">CineManics</h5>
+      <h5 class="text-uppercase">CineManiacs</h5>
       <p>Movies watching made easy</p>
 
     </div>
